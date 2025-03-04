@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify-like Music Player</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url(urname.jpg) no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .player {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            width: 300px;
+        }
+        .cover {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .controls {
+            margin-top: 15px;
+        }
+        button {
+            background: #1DB954;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50px;
+            font-size: 16px;
+        }
+        .lyrics {
+            margin-top: 15px;
+            font-size: 14px;
+            max-height: 100px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="player">
+        <!-- Album Cover -->
+        <img class="cover" src="download.jpg" alt="Album Cover">
+        
+        <!-- Song Information -->
+        <h2 id="song-title">Blue</h2>
+        <p id="artist">Yungkai</p>
+        
+        <!-- Audio Source with Controls -->
+        <audio id="audio" controls>
+            <source src="yung kai - blue (Official Music Video).mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <div class="controls">
+            <button onclick="togglePlay()">Play</button>
+        </div>
+        
+       
+        </div>
+    </div>
+    <script>
+        const audio = document.getElementById('audio');
+        const button = document.querySelector('button');
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                button.textContent = 'Pause';
+            } else {
+                audio.pause();
+                button.textContent = 'Play';
+            }
+        }
+    </script>
+</body>
+</html>
